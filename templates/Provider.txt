@@ -1,0 +1,6 @@
+package {package}.src.{path}_logic.di
+
+import dagger.Module
+
+@Module(subcomponents = [{logic}Component::class])
+object {logic}Provider

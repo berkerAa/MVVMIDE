@@ -1,0 +1,22 @@
+[{
+    "package": "com.example.autonomtest",
+    "path": "user",
+    "logic": "User",
+    "modules": ["ViewBinding", "Router", "Composite"],
+    "screens": [{"Name": "Login"}, {"Name": "Register"}, {"Name": "ForgetPassword"}, {"Name": "VerifyCode"},{"Name": "ResetPassword"}],
+    "firstScreen": "Login"
+},
+{
+    "package": "com.example.autonomtest",
+    "path": "warehouse",
+    "logic": "Warehouse",
+    "modules": ["ViewBinding", "Router", "Composite", "Recycler"],
+    "screens": [{
+        "Name": "Search",
+        "Recycler":[{"Name": "VerticalItem", "ViewHolder": ["WarehousePreviewCard"]}]
+        },
+        {
+        "Name": "Details",
+        "Recycler": [{"Name": "HorizontalCertificate", "ViewHolder": ["CertificateIconCard"]},{"Name": "HorizontalManager", "ViewHolder": ["ManagerPreviewCard"]}]}],
+    "firstScreen": "Search"
+}]

@@ -1,0 +1,18 @@
+package {package}.src.{path}_logic.di
+import {package}.src.{path}_logic.ds.{logic}Scope
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import dagger.Subcomponent
+
+//@EndLibraryImport
+@{logic}Scope
+@Subcomponent(modules = [{modules}])
+interface {logic}Component {{
+    @Subcomponent.Factory
+    interface Factory
+    {{
+        fun create(): {logic}Component
+    }}
+    fun inject(activity: AppCompatActivity)
+    fun inject(fragment: Fragment)
+}}

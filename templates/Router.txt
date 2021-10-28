@@ -1,0 +1,36 @@
+package {package}.src.{path}_logic
+
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import {package}.app_modules.router.Router
+import {package}.src.{path}_logic.ds.{logic}Scope
+
+//@EndLibraryImport
+
+sealed class {logic}NavigationStatus
+
+@{logic}Scope
+class {logic}Router: Router<{logic}NavigationStatus> {{
+    override fun navigationLogic(
+        activity: AppCompatActivity,
+        navigationStatus: {logic}NavigationStatus,
+        containerViewId: Int,
+    ) {{
+        when(navigationStatus)
+        {{
+	//@EndNavigationCaseCheck
+        }}
+    }}
+
+    override fun navigationLogicOnBackPressed(
+        activity: AppCompatActivity,
+        activeScreen: Fragment,
+        containerViewId: Int,
+    ) {{
+        when(activeScreen)
+        {{
+            is {screen}Presenter -> activity.finishAffinity()
+            
+        }}
+    }}
+}}

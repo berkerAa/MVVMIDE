@@ -1,0 +1,46 @@
+package {package}.src.{path}_logic.{screenlower}
+
+import android.content.Context
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import {package}.R
+import android.util.Log
+import {package}.app_modules.presenter.Presenter
+import {package}.src.{path}_logic.{logic}Bridge
+import {package}.src.{path}_logic.model.*
+
+class {screen}Presenter: Presenter<{screen}ViewModel, {screen}Model>() {{
+    override fun onAttach(context: Context) {{
+        super.onAttach(context)
+        (activity as {logic}Bridge).component.inject(this)
+    }}
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {{
+        setView(
+            layoutId = R.layout.{layout_name},
+            container = container,
+            inflater = inflater
+        )
+        viewBinding.postExecute() 
+        return viewBinding.view
+    }}
+
+    fun on{screen}() = compositeDisposable.add(viewModel.on{screen}(viewBinding.getObject())
+        .subscribe({{ status ->
+            when (status)
+            {{
+                
+		//@EndStatusCheck
+            }}
+        }},
+            {{error ->
+                Log.d("Error", error.toString())
+            }})
+    )
+}}

@@ -1,0 +1,5 @@
+	fun on{screen}({screenlower}Model: {screen}Model): Observable<BaseResponse> {{
+        	return webApi.{screenlower}({screenlower}Model)
+            		.subscribeOn(Schedulers.io())
+            		.observeOn(AndroidSchedulers.mainThread())
+    	}}

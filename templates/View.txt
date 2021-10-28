@@ -1,0 +1,18 @@
+package {package}.src.{path}_logic.{screenlower}
+
+import android.view.View
+import {package}.app_modules.view_binding.ViewBinding
+import {package}.src.{path}_logic.model.{screen}Model
+import javax.inject.Inject
+
+//@EndImportLibraries
+class {screen}View @Inject constructor(
+
+//@EndDependencyInjection
+): ViewBinding<{screen}Model> {{
+    override lateinit var view: View
+
+    override fun getObject(items: ArrayList<String>): {screen}Model {{
+        return {screen}Model() //fill with Model Configuration
+    }}
+}}

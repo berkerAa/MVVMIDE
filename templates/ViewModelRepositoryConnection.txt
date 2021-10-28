@@ -1,0 +1,13 @@
+fun on{screen}({screenlower}Model: {screen}Model): Observable<{screen}Status>
+    {{
+        return {path}Repository.on{screen}({screenlower}Model)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .map {{ status ->
+                when(status.status)
+                {{
+                    
+		//@EndStatusMapping
+                }}
+            }}
+    }}

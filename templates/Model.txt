@@ -1,0 +1,15 @@
+package {package}.src.{path}_logic.model
+
+import com.google.gson.annotations.SerializedName
+
+sealed class {screen}Status
+
+
+//@EndStatusCheckDecleration
+
+data class {screen}Model(
+
+//@EndDataClassDecleration
+)
+
+

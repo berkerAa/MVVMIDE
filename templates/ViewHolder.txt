@@ -1,0 +1,17 @@
+package {package}.src.{path}_logic.{screenlower}.viewholder
+
+import android.view.View
+import androidx.recyclerview.widget.RecyclerView
+/**
+ * Constructs ViewHolder Base template with initializer for assigning listener actions to specific recycler items by View Tag
+ * <p>
+ * @param  view item view which is named as item_{recycler}_{path}_{screenlower}_{viewlower}.xml under res.layout
+ * @param  listeners listener high order functions that will be determined on {logic}.{screenlower}.{screen}.kt for setting click listener by tag, items: Map represented by Key->View Tag, Value-> High order function, inner keys loop always runs for O(1)
+ */
+class {view}ViewHolder constructor(view: View, listeners: ArrayList<Map<String, (View)->Unit>>) : RecyclerView.ViewHolder(view){{
+    init {{
+        listeners.forEach {{ actionMap ->
+            actionMap.keys.forEach {{ key -> itemView.findViewWithTag<View>(key).setOnClickListener {{ actionMap[key](itemView) }} }}
+        }}
+    }}
+}}

@@ -1,0 +1,19 @@
+package {package}.src.{path}_logic
+
+import android.os.Bundle
+import {package}.app_modules.bridge.Bridge
+import {package}.core.base.ApplicationGraph
+import {package}.src.{path}_logic.di.{logic}Component
+import {package}.src.{path}_logic.ds.{logic}Scope
+import {package}.src.{path}_logic.{screenlower}.{screen}Presenter
+
+@{logic}Scope
+class {logic}Bridge: Bridge<{logic}Component, {logic}NavigationStatus>() {{
+
+    override fun onCreate(savedInstanceState: Bundle?) {{
+        component = (application as ApplicationGraph).applicationGraphComponent.{component}Component().create()
+        component.inject(this)
+        super.onCreate(savedInstanceState)
+        startNavigation {{ {screen}Presenter() }}
+    }}
+}}

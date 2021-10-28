@@ -1,0 +1,45 @@
+package {package}.src.{path}_logic.{screenlower}.adapter
+
+import android.content.Context
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import {package}.R
+import javax.inject.Inject
+
+//@EndImportLibraries
+
+sealed class {recycler}TypeCase
+
+//@EndViewHolderTypes
+
+
+class {recycler}Adapter constructor(val items: ArrayList<Map<String, Any>>): RecyclerView.Adapter<RecyclerView.ViewHolder>() {{
+
+    @Inject
+    lateinit var context: Context
+
+    lateinit var listeners: Map<{recycler}TypeCase, ArrayList<Map<String, (View)->Unit>>>
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {{
+        return when(items[viewType]["Type"] as {recycler}TypeCase){{
+            
+	//@EndViewCreator
+        }}
+    }}
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {{
+        TODO("Not yet implemented")
+	
+	//@EndViewBinder
+    }}
+
+    override fun getItemViewType(position: Int): Int {{
+        return position
+    }}
+
+    override fun getItemCount(): Int {{
+        return items.size
+    }}
+}}

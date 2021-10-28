@@ -1,0 +1,31 @@
+package {package}.src.{path}_logic.{screenlower}
+
+import {package}.src.{path}_logic.{logic}Repository
+import javax.inject.Inject
+import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
+import {package}.app_modules.web_api.response.BaseResponse
+import {package}.src.{path}_logic.ds.{logic}Scope
+import {package}.src.{path}_logic.model.*
+
+class {screen}ViewModel @Inject constructor(private val {path}Repository: {logic}Repository) {{
+/**
+* Return Observable API Result status with result data placeholder 
+* The model argument must specify a model description of specified business case.
+* <p>
+* @param  model data class description of unseriliazed Json Format
+* @return      Observable API results status
+*/
+
+	//@StartRepositoryConnection
+
+
+/**
+* Return Observable Calculation status with result data placeholder 
+* The model argument must specify a model description of specified business case.
+* <p>
+* @return      Observable Calculation results status
+*/
+	//@StartCustomCalculation
+}}

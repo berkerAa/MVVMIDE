@@ -1,0 +1,16 @@
+package {package}.src.{path}_logic
+
+import {package}.app_modules.web_api.WebApi
+import io.reactivex.Observable
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
+import {package}.app_modules.web_api.response.BaseResponse
+import {package}.src.{path}_logic.ds.{logic}Scope
+import {package}.src.{path}_logic.model.*
+import javax.inject.Inject
+
+@{logic}Scope
+class {logic}Repository @Inject constructor(private val webApi: WebApi) {{
+
+	//@EndRepositoryConnections
+}}
